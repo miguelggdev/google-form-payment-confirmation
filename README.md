@@ -67,9 +67,8 @@ const TWILIO_AUTH_TOKEN = 'TU_AUTH_TOKEN';
 const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'; // Número del sandbox de Twilio
 ``` 
 
-📲 Cómo crear y configurar Twilio
+###📲 Cómo crear y configurar Twilio
 🧪 Ve a https://www.twilio.com/try-twilio y crea una cuenta gratuita.
-
 Una vez dentro del dashboard, copia los siguientes valores:
 
 🔑 Account SID
