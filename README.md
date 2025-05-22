@@ -54,3 +54,7 @@ Al llenar un formulario de pago de un deportista, este script:
 ```bash
 git clone https://github.com/tu-usuario/tu-repo-pagos.git
 cd tu-repo-pagos
+```bash
+
+### .2. ✏️ Edita tus credenciales Twilio
+Abre el archivo Codigo.gs y reemplaza:
