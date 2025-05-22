@@ -78,3 +78,70 @@ Activa el sandbox de WhatsApp en:
 👉 https://www.twilio.com/console/sms/whatsapp/learn
 Verifica tu número siguiendo las instrucciones del sandbox.
 Usa el número que Twilio te proporciona, por ejemplo: whatsapp:+14155238886
+
+
+📂 Instrucciones para Google Apps Script
+Abre tu hoja de cálculo de Google (la que recopila respuestas del formulario).
+
+Ve al menú: Extensiones > Apps Script
+
+Borra todo el contenido y pega el código del archivo Codigo.gs de este repositorio.
+
+Guarda el proyecto con un nombre como ConfirmacionPagosForm.
+
+Luego, ve a:
+🔁 Desencadenadores (ícono de reloj) > Añadir desencadenador
+
+Función: onFormSubmit
+
+Origen del evento: Formulario
+
+Tipo de evento: Al enviar el formulario
+
+Acepta los permisos necesarios (Apps Script te pedirá acceso a Gmail, Drive, etc.).
+
+
+📥 Estructura del formulario y hoja de cálculo
+Asegúrate de que los campos del formulario estén en este orden exacto:
+
+Nº	Campo
+1	Nombre Deportista
+2	Documento TI
+3	Club
+4	Categoría
+5	Fecha de Pago
+6	Valor de Pago
+7	Concepto
+8	Nombre Persona que Paga
+9	Correo Electrónico
+10	Teléfono
+📧 Ejemplo de mensaje enviado
+Correo:
+
+Hola Juan Pérez,
+
+Gracias por tu pago:
+
+- Nombre Deportista: Laura Gómez
+- Documento TI: 1029384
+- Club: Club Rápidos
+- Categoría: Junior A
+- Fecha de Pago: 2025-05-20
+- Valor Pagado: $150.000
+- Concepto: Inscripción competencia regional
+- Correo Electrónico: juan@example.com
+- Teléfono: +573001234567
+
+- Adjunto: PDF con el resumen del pago.
+
+- WhatsApp:
+- Hola Juan Pérez,
+
+Gracias por tu pago por Laura Gómez - Categoría Junior A. Valor: $150.000. Hemos enviado el recibo a tu correo juan@example.com
+
+📎 Licencia
+Este proyecto está bajo la licencia MIT.
+
+🧡 Créditos
+Hecho con 💡 por MiguelGG - Inspirado en la necesidad de facilitar la gestión de pagos deportivos automatizados.
+
