@@ -1,7 +1,7 @@
-📘 google-form-payment-confirmation — Confirmación automática por correo y WhatsApp desde Google Forms
-# 📄 Confirmación de Pagos Deportivos - Google Forms + WhatsApp + PDF + Email
+# 📘 google-form-payment-confirmation — Confirmación automática por correo y WhatsApp desde Google Forms
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)  
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 Automatiza la **confirmación de pagos** realizados a través de un **formulario de Google Forms**, enviando:
 
 ✅ Un **correo electrónico profesional** con PDF del recibo.  
@@ -12,38 +12,38 @@ Automatiza la **confirmación de pagos** realizados a través de un **formulario
 
 ## 🚀 ¿Qué hace este proyecto?
 
-Al llenar un formulario de pago de un deportista, este script:
+Cuando alguien llena el formulario de pago de un deportista:
 
-1. Extrae los datos del formulario.
-2. Genera un mensaje de confirmación personalizado.
-3. Envía ese mensaje al correo y al WhatsApp del pagador.
-4. Adjunta un PDF con el resumen del recibo.
+1. 📥 Se extraen los datos ingresados.
+2. 🧾 Se genera un mensaje de confirmación personalizado.
+3. ✉️ Se envía el mensaje por correo electrónico y WhatsApp.
+4. 📄 Se adjunta un PDF con el resumen del pago.
 
 ---
 
 ## 🧩 Tecnologías utilizadas
 
-- Google Apps Script (Gmail, UrlFetchApp)
-- Google Forms + Google Sheets
-- Twilio API para WhatsApp
-- HTML y PDF (recibo profesional)
+- ⚙️ Google Apps Script (Gmail, UrlFetchApp)
+- 📄 Google Forms + Google Sheets
+- 💬 Twilio API para WhatsApp
+- 🖋️ HTML y PDF (recibo profesional)
 
 ---
 
 ## 📋 Estructura esperada del formulario
 
-| Campo | Descripción |
-|-------|-------------|
-| Nombre Deportista | Nombre del atleta |
-| Documento TI | Identificación |
-| Club | Club deportivo |
-| Categoría | Categoría del deportista |
-| Fecha de Pago | Fecha del pago |
-| Valor de Pago | Monto |
-| Concepto | Detalle del pago |
-| Nombre Persona que Paga | Pagador |
-| Correo Electrónico | A quién enviar el correo |
-| Teléfono | Para WhatsApp |
+| Nº | Campo                      | Descripción                   |
+|----|----------------------------|-------------------------------|
+| 1  | Nombre Deportista          | Nombre del atleta             |
+| 2  | Documento TI               | Identificación                |
+| 3  | Club                       | Club deportivo                |
+| 4  | Categoría                  | Categoría del deportista      |
+| 5  | Fecha de Pago              | Fecha del pago                |
+| 6  | Valor de Pago              | Monto                         |
+| 7  | Concepto                   | Detalle del pago              |
+| 8  | Nombre Persona que Paga    | Pagador                       |
+| 9  | Correo Electrónico         | A quién enviar el correo      |
+| 10 | Teléfono                   | Número para WhatsApp          |
 
 ---
 
@@ -51,9 +51,10 @@ Al llenar un formulario de pago de un deportista, este script:
 
 ### 1. 🔁 Clona este repositorio
 
-
+```bash
 git clone https://github.com/tu-usuario/tu-repo-pagos.git
 cd tu-repo-pagos
+```
 
 ---
 
@@ -65,58 +66,50 @@ Abre el archivo `Codigo.gs` y reemplaza las siguientes líneas con los datos de 
 const TWILIO_ACCOUNT_SID = 'TU_ACCOUNT_SID';
 const TWILIO_AUTH_TOKEN = 'TU_AUTH_TOKEN';
 const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'; // Número del sandbox de Twilio
-``` 
+```
+
+---
 
 ### 3. 📲 Cómo crear y configurar Twilio
-🧪 Ve a https://www.twilio.com/try-twilio y crea una cuenta gratuita.
-Una vez dentro del dashboard, copia los siguientes valores:
 
-🔑 Account SID
-🧬 Auth Token
-Activa el sandbox de WhatsApp en:
-👉 https://www.twilio.com/console/sms/whatsapp/learn
-Verifica tu número siguiendo las instrucciones del sandbox.
-Usa el número que Twilio te proporciona, por ejemplo: whatsapp:+14155238886
+1. 🧪 Ve a: [https://www.twilio.com/try-twilio](https://www.twilio.com/try-twilio) y crea una cuenta gratuita.  
+2. Accede al dashboard y copia tus datos:
+   - 🔑 Account SID
+   - 🧬 Auth Token  
+3. Activa el sandbox de WhatsApp aquí:  
+👉 [https://www.twilio.com/console/sms/whatsapp/learn](https://www.twilio.com/console/sms/whatsapp/learn)  
+4. Verifica tu número siguiendo las instrucciones.  
+5. Usa el número proporcionado por Twilio (`whatsapp:+14155238886` por defecto).
 
+---
 
 ### 4. 📂 Instrucciones para Google Apps Script
-Abre tu hoja de cálculo de Google (la que recopila respuestas del formulario).
 
-Ve al menú: Extensiones > Apps Script
+1. Abre la hoja de cálculo de Google que recibe las respuestas del formulario.  
+2. Ve al menú: `Extensiones > Apps Script`.  
+3. Borra el contenido y **pega el código del archivo `Codigo.gs`** de este repositorio.  
+4. Guarda el proyecto con un nombre como `ConfirmacionPagosForm`.
 
-Borra todo el contenido y pega el código del archivo Codigo.gs de este repositorio.
+---
 
-Guarda el proyecto con un nombre como ConfirmacionPagosForm.
+### 5. ⏱️ Configura el desencadenador
 
-Luego, ve a:
-🔁 Desencadenadores (ícono de reloj) > Añadir desencadenador
+1. En el editor de Apps Script, haz clic en el ícono de reloj 🕒 (Desencadenadores).  
+2. Añade un nuevo desencadenador:
 
-Función: onFormSubmit
+   - **Función**: `onFormSubmit`  
+   - **Origen del evento**: Formulario  
+   - **Tipo de evento**: Al enviar el formulario  
 
-Origen del evento: Formulario
+3. Acepta los permisos necesarios (Apps Script te pedirá acceso a Gmail, Drive, etc.).
 
-Tipo de evento: Al enviar el formulario
+---
 
-Acepta los permisos necesarios (Apps Script te pedirá acceso a Gmail, Drive, etc.).
+## 📧 Ejemplo de mensaje enviado
 
+### ✉️ Correo electrónico:
 
-📥 Estructura del formulario y hoja de cálculo
-Asegúrate de que los campos del formulario estén en este orden exacto:
-
-Nº	Campo
-1	Nombre Deportista
-2	Documento TI
-3	Club
-4	Categoría
-5	Fecha de Pago
-6	Valor de Pago
-7	Concepto
-8	Nombre Persona que Paga
-9	Correo Electrónico
-10	Teléfono
-📧 Ejemplo de mensaje enviado
-Correo:
-
+```
 Hola Juan Pérez,
 
 Gracias por tu pago:
@@ -131,16 +124,28 @@ Gracias por tu pago:
 - Correo Electrónico: juan@example.com
 - Teléfono: +573001234567
 
-- Adjunto: PDF con el resumen del pago.
+Adjunto: PDF con el resumen del pago.
+```
 
-- WhatsApp:
-- Hola Juan Pérez,
+---
 
-Gracias por tu pago por Laura Gómez - Categoría Junior A. Valor: $150.000. Hemos enviado el recibo a tu correo juan@example.com
+### 💬 WhatsApp:
 
-📎 Licencia
+```
+Hola Juan Pérez,
+
+Gracias por tu pago por Laura Gómez - Categoría Junior A. Valor: $150.000.  
+Hemos enviado el recibo a tu correo juan@example.com.
+```
+
+---
+
+## 📎 Licencia
+
 Este proyecto está bajo la licencia MIT.
 
-🧡 Créditos
-Hecho con 💡 por MiguelGG - Inspirado en la necesidad de facilitar la gestión de pagos deportivos automatizados.
+---
 
+## 🧡 Créditos
+
+Hecho con 💡 por **MiguelGG** — Inspirado en la necesidad de facilitar la gestión de pagos deportivos automatizados.
