@@ -58,9 +58,12 @@ cd tu-repo-pagos
 ---
 
 ### 2. ✏️ Edita tus credenciales Twilio
-Abre el archivo Codigo.gs y reemplaza:
 
+Abre el archivo `Codigo.gs` y reemplaza las siguientes líneas con los datos de tu cuenta Twilio:
+
+```javascript
 const TWILIO_ACCOUNT_SID = 'TU_ACCOUNT_SID';
 const TWILIO_AUTH_TOKEN = 'TU_AUTH_TOKEN';
-const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886';
+const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'; // Número del sandbox de Twilio
+
 
