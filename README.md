@@ -51,10 +51,16 @@ Al llenar un formulario de pago de un deportista, este script:
 
 ### 1. 🔁 Clona este repositorio
 
-```bash
+
 git clone https://github.com/tu-usuario/tu-repo-pagos.git
 cd tu-repo-pagos
-```bash
 
-### .2. ✏️ Edita tus credenciales Twilio
+---
+
+### 2. ✏️ Edita tus credenciales Twilio
 Abre el archivo Codigo.gs y reemplaza:
+
+const TWILIO_ACCOUNT_SID = 'TU_ACCOUNT_SID';
+const TWILIO_AUTH_TOKEN = 'TU_AUTH_TOKEN';
+const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886';
+
