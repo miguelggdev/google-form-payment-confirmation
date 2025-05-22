@@ -67,20 +67,19 @@ const TWILIO_AUTH_TOKEN = 'TU_AUTH_TOKEN';
 const TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'; // Número del sandbox de Twilio
 ``` 
 
-###📲 Cómo crear y configurar Twilio
+### 3. 📲 Cómo crear y configurar Twilio
 🧪 Ve a https://www.twilio.com/try-twilio y crea una cuenta gratuita.
 Una vez dentro del dashboard, copia los siguientes valores:
 
 🔑 Account SID
 🧬 Auth Token
-
 Activa el sandbox de WhatsApp en:
 👉 https://www.twilio.com/console/sms/whatsapp/learn
 Verifica tu número siguiendo las instrucciones del sandbox.
 Usa el número que Twilio te proporciona, por ejemplo: whatsapp:+14155238886
 
 
-📂 Instrucciones para Google Apps Script
+### 4. 📂 Instrucciones para Google Apps Script
 Abre tu hoja de cálculo de Google (la que recopila respuestas del formulario).
 
 Ve al menú: Extensiones > Apps Script
