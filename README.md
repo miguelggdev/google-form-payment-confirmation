@@ -148,4 +148,4 @@ Este proyecto está bajo la licencia MIT.
 
 ## 🧡 Créditos
 
-Hecho con 💡 por **MiguelGG** — Inspirado en la necesidad de facilitar la gestión de pagos deportivos automatizados.
+Hecho 💡 por **MiguelGG** — Inspirado en la necesidad de facilitar la gestión de pagos deportivos automatizados.
